@@ -142,6 +142,39 @@
                 const newTheme = this.value;
                 monaco.editor.setTheme(newTheme);
             });
+
+
+            editor.updateOptions({
+                fontSize: 16,
+                fontFamily: 'Consolas',
+                lineHeight: 20,
+                letterSpacing: 0.5,
+
+                wordWrap: 'off',      // text overflow to next line, 'on' / 'off', 'bounded' for long lines
+                lineNumbers: 'on',   // 'on', 'off', 'relative'
+
+                minimap: {
+                    enabled: true,
+                    side: 'right',         // 'left', 'right'
+                    showSlider: 'always',  // 'always', 'mouseover'
+                    size: 'small'         // 'small', 'medium', 'large'
+                },
+
+                quickSuggestions: {
+                    comments: false,
+                    other: true
+                },
+
+                autoClosingQuotes: 'always',    // useful options:
+                autoClosingBrackets: 'always',  // 'always', 'beforeWhitespace', 'never'
+
+                cursorStyle: 'line',       // 'block', 'line', 'underline'
+                cursorBlinking: 'expand',    // 'blink', 'smooth', 'phase', 'expand'
+                
+                autoSave: true,
+                gutter: true,   // area showing line numbers and breakpoints
+                selectionHighlight: true,  // highlight same references (CTRL + D)
+            });
         });
     </script>
 
